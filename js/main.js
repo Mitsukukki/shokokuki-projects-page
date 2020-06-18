@@ -9,14 +9,11 @@ function finishBackgroundLoad(src) {
 
 function viewProfile(element) {
 	if (currentProfileElement !== element) {
-		if (element !== main.querySelectorAll(".member")[0]) {
-			main.querySelectorAll(".member")[0].style.display = "none";
-		}
-		if (element !== main.querySelectorAll(".member")[1]) {
-			main.querySelectorAll(".member")[1].style.display = "none";
-		}
-		if (element !== main.querySelectorAll(".member")[2]) {
-			main.querySelectorAll(".member")[2].style.display = "none";
+		memberlength = main.querySelectorAll(".member").length
+        	for (let index = 0; index < memberlength; index++) {
+			if (element !== main.querySelectorAll(".member")[index]) {
+				main.querySelectorAll(".member")[index].style.display = "none";
+			}
 		}
 		currentProfileElement = element;
 		element.style.transform = "none";
