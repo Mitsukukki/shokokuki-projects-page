@@ -1,5 +1,3 @@
-const main = document.querySelector("main");
-const logo = document.querySelector(".logo");
 var currentProfileElement;
 
 function finishBackgroundLoad(src) {
