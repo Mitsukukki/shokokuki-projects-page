@@ -1,5 +1,6 @@
 const main = document.querySelector("main");
 const logo = document.querySelector(".logo");
+var currentProfileElement;
 document.body.style.display = "block";
 
 function finishBackgroundLoad(src) {
@@ -7,31 +8,33 @@ function finishBackgroundLoad(src) {
 }
 
 function viewProfile(element) {
-	if (element !== main.querySelectorAll(".member")[0]) {
-		main.querySelectorAll(".member")[0].style.display = "none";
-	}
-	if (element !== main.querySelectorAll(".member")[1]) {
-		main.querySelectorAll(".member")[1].style.display = "none";
-	}
-	if (element !== main.querySelectorAll(".member")[2]) {
-		main.querySelectorAll(".member")[2].style.display = "none";
-	}
-	console.log("oui");
-	element.style.transform = "none";
-	element.style.height = "300px";
-	element.style.minHeight = "300px";
-	element.querySelector("img").style.borderRadius = "100px";
-	element.querySelector("img").style.transform = "scale(0.75)";
-	setTimeout(function(){
-		element.querySelector("img").style.transform = "scale(1)";
-		element.querySelector("img").style.borderRadius = "10px";
-		element.style.width = "500px";
-		element.style.background = 'rgb(30,30,35)';
-		logo.style.opacity = "0";
-		element.querySelector("img").style.boxShadow = "none";
+	if (currentProfileElement !== element) {
+		if (element !== main.querySelectorAll(".member")[0]) {
+			main.querySelectorAll(".member")[0].style.opacity = "0";
+		}
+		if (element !== main.querySelectorAll(".member")[1]) {
+			main.querySelectorAll(".member")[1].style.opacity = "0";
+		}
+		if (element !== main.querySelectorAll(".member")[2]) {
+			main.querySelectorAll(".member")[2].style.opacity = "0";
+		}
+		currentProfileElement = element;
+		element.style.transform = "none";
+		element.style.height = "300px";
+		element.style.minHeight = "300px";
+		element.querySelector("img").style.borderRadius = "100px";
+		element.querySelector("img").style.transform = "scale(0.75)";
 		setTimeout(function(){
-			element.querySelector(".content").style.opacity = "1";
-			element.querySelector(".username").style.display = "block";
+			element.querySelector("img").style.transform = "scale(1)";
+			element.querySelector("img").style.borderRadius = "10px";
+			element.style.width = "500px";
+			element.style.background = 'rgb(30,30,35)';
+			logo.style.opacity = "0";
+			element.querySelector("img").style.boxShadow = "none";
+			setTimeout(function(){
+				element.querySelector(".content").style.opacity = "1";
+				element.querySelector(".username").style.display = "block";
+			},500);
 		},500);
-	},750);
+	}
 }
