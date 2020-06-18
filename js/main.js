@@ -1,6 +1,6 @@
 const main = document.querySelector("main");
 const logo = document.querySelector(".logo");
-var ;
+var currentProfileElement;
 document.body.style.display = "block";
 
 function finishBackgroundLoad(src) {
@@ -18,7 +18,7 @@ function viewProfile(element) {
 		if (element !== main.querySelectorAll(".member")[2]) {
 			main.querySelectorAll(".member")[2].style.display = "none";
 		}
-		console.log("oui");
+		currentProfileElement = element;
 		element.style.transform = "none";
 		element.style.height = "300px";
 		element.style.minHeight = "300px";
