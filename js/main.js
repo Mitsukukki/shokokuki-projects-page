@@ -1,7 +1,6 @@
 const main = document.querySelector("main");
 const logo = document.querySelector(".logo");
 var currentProfileElement;
-document.body.style.display = "block";
 
 function finishBackgroundLoad(src) {
 	document.querySelector(".background").src = src;
