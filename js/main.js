@@ -33,5 +33,5 @@ function viewProfile(element) {
 			element.querySelector(".content").style.opacity = "1";
 			element.querySelector(".username").style.display = "block";
 		},500);
-	},750);
+	},500);
 }
