@@ -85,10 +85,11 @@ main {
 
 .member img {
 	height:100px;
-	animation:popup 2s;
+	animation:fade 2s;
 	border-radius:10px;
 	box-shadow:0px 3.5px 5px rgba(255,255,255,0.5);
 	transition:0.5s;
+	background: rgba(255,255,255,0.35);
 }
 
 .member {
